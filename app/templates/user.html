@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style/user_chart.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename="style/all.css") }}">
+
+{% block app_content %}
+    <table class="table">
+        <tr>
+            <td width="256px"><img src="../static/images/profile.jpg" height= "256px" width="256px"></td>
+            <td>
+                <h1>{{ user.username }}</h1>
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}
+                <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
+                {% endif %}
+                <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
+                {% if user == current_user %}
+                <p><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></p>
+                {% elif not current_user.is_following(user) %}
+                <p><a href="{{ url_for('main.follow', username=user.username) }}">{{ _('Follow') }}</a></p>
+                {% else %}
+                <p><a href="{{ url_for('main.unfollow', username=user.username) }}">{{ _('Unfollow') }}</a></p>
+                {% endif %}
+            </td>
+            <td>
+                    <br>
+                    
+                    <br>
+                    <h3>Badges of Honour</h3>
+                    <img src="../static/images/plastic.png" title="You're Plastic Wise!">         
+                                  
+                    <img src="../static/images/coin.png" title="You've Redeemed a Reward!">
+                                       
+                    <img src="../static/images/seal.png" title="A Seal of Approval!">
+                    
+                    <img src="../static/images/dish.png" title="Ocean Wise Restaurants are the Best">
+                </td>
+        </tr>
+    </table>
+        <div class="panel">
+            <div class="pen"><i class="fas fa-current-balance"></i><span>Your Current Balance</span>
+                <div class="sum sum1">{{ user.total_points - 660 | int }}</div>
+            </div>
+            <div class="pen"><i class="fas fa-total-collected"></i><span>Total Collected</span>
+                <div class="sum sum2">{{ user.total_points | int }}</div>
+            </div>
+            <div class="pen"><i class="fas fa-total-redeemed"></i><span>Total Redeemed</span>
+                <div class="sum sum3">660</div>
+            </div>
+        </div>
+
+    <div class="chart">
+        <div class="title">Monthly Summary</div>
+        <canvas id="canvas" height=70%></canvas>
+    </div>
+
+    <div class="chart">
+        <div class="title">Recent Activities</div>
+    </div>
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/loader.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/user_chart.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/timeSeries.js') }}"></script>
+{% endblock %}

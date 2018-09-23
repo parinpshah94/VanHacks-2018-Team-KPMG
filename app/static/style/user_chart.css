@@ -1,0 +1,322 @@
+#header {
+  display: inline-block;
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+}
+#header :after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#header  > * {
+  float: left;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  font-weight: bold;
+}
+#header  .logo {
+  font-size: 24px;
+  color: #FFFFFF;
+  width: 110px;
+  margin-right: 42px;
+}
+#header  .admin {
+  text-align: right;
+  font-size: 16px;
+  color: #FFFFFF;
+  width: 54px;
+  cursor: pointer;
+}
+#header  .menu {
+  width: calc(100% - 110px - 54px - 42px);
+}
+#header  .menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#header  .menu a {
+  float: left;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 80px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #9B9B9B;
+  position: relative;
+}
+#header  .menu a:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background-color: #FFFFFF;
+  opacity: 0;
+}
+#header  .menu a.active, #header  .menu a:hover {
+  color: #FFFFFF;
+}
+#header  .menu a.active:after, #header  .menu a:hover:after {
+  opacity: 1;
+}
+
+ {
+  display: inline-block;
+  width: 100%;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+  {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+  .info {
+  display: inline-block;
+  width: 100%;
+}
+  .info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .info > * {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  line-height: 24px;
+}
+  .info .left {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+  .info .right {
+  text-align: right;
+  color: #9B9B9B;
+}
+  .info .right > * {
+  display: inline-block;
+}
+  .info .right .date,   .info .right .cycle {
+  font-size: 14px;
+  margin: 0 8px 0 4px;
+}
+  .info .right i {
+  color: #000000;
+}
+  .panel {
+  width: 100%;
+  margin-top: 2px;
+  display: inline-block;
+}
+  .panel:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .panel .pen {
+  width: 32%;
+  display: inline-block;
+  float: left;
+  padding: 0 0;
+  background-color: #FFFFFF;
+}
+  .panel .pen + * {
+  margin-left: 2%;
+}
+  .panel .pen i {
+  margin: 0 8px;
+}
+  .panel .pen .sum {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: bold;
+}
+  .panel .pen .sum1 {
+  color: #7ED321;
+}
+  .panel .pen .sum2 {
+  color: #D0021B;
+}
+  .panel .pen .sum3 {
+  color: #4A90E2;
+}
+  .chart {
+  margin-top: 0px;
+  display: inline-block;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 16px 0;
+}
+  .chart .title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 16px;
+  text-align: left;
+}
+  .chart #chart {
+  width: 100%;
+  height: 180px;
+}
+  .others {
+  margin-top: 16px;
+  display: table;
+  width: 100%;
+}
+  .others:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .others .table-row {
+  display: table-row;
+}
+  .others .table-row .page-section {
+  display: table-cell;
+  width: 2%;
+}
+  .others .table-row .page {
+  display: table-cell;
+  width: 49%;
+  padding: 16px 16px;
+  background-color: #FFFFFF;
+}
+  .others .table-row .page div.datarow:nth-child(2),   .others .table-row .page div.datarow2:nth-child(2) {
+  padding-top: 0;
+}
+  .others .table-row .page .title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 16px;
+}
+  .others .table-row .page .datarow {
+  padding: 24px 0;
+  text-align: left;
+  border-bottom: 1px solid #EBEBEB;
+}
+  .others .table-row .page .datarow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .others .table-row .page .datarow:last-child {
+  border: none;
+}
+  .others .table-row .page .datarow > * {
+  display: inline-block;
+  line-height: 36px;
+  vertical-align: top;
+}
+  .others .table-row .page .datarow i {
+  font-size: 36px;
+  width: 36px;
+  text-align: center;
+}
+  .others .table-row .page .datarow .site {
+  font-size: 14px;
+  margin-left: 8px;
+}
+  .others .table-row .page .datarow .stat {
+  float: right;
+}
+  .others .table-row .page .datarow .stat > * {
+  display: inline-block;
+  line-height: 36px;
+  vertical-align: top;
+}
+  .others .table-row .page .datarow .stat .sum {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+  .others .table-row .page .datarow .stat i,   .others .table-row .page .datarow .stat .pctage {
+  font-size: 16px;
+}
+  .others .table-row .page .datarow .stat .fa-arrow-up,   .others .table-row .page .datarow .stat .up {
+  color: #7ED321;
+}
+  .others .table-row .page .datarow .stat .fa-arrow-down,   .others .table-row .page .datarow .stat .down {
+  color: #D0021B;
+}
+  .others .table-row .page .datarow2 {
+  padding: 8px 0;
+  text-align: left;
+  border-bottom: 1px solid #EBEBEB;
+}
+  .others .table-row .page .datarow2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .others .table-row .page .datarow2:last-child {
+  border: none;
+}
+  .others .table-row .page .datarow2 > * {
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+}
+  .others .table-row .page .datarow2 .img {
+  background-size: cover;
+  width: 92px;
+  height: 92px;
+}
+  .others .table-row .page .datarow2 .content {
+  width: calc(100% - 92px);
+  height: 92px;
+  line-height: 20px;
+  padding: 16px 8px;
+}
+  .others .table-row .page .datarow2 .content .title {
+  margin: 0 0;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo > * {
+  display: inline-block;
+  font-size: 16px;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo i {
+  width: 16px;
+  text-align: center;
+  margin-right: 2px;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo .infos {
+  color: #9B9B9B;
+  font-size: 14px;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo .total,   .others .table-row .page .datarow2 .content .ordersinfo .sum {
+  float: right;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo .total {
+  font-size: 14px;
+}
+  .others .table-row .page .datarow2 .content .ordersinfo .sum {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#orders {
+  display: none;
+  width: 100%;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+
+#product {
+  display: none;
+  width: 100%;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+
+

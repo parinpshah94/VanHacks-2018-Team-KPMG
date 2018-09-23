@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="../static/css/redeem.css">
+{% endblock %}
+
+
+{% block app_content %}
+
+<body style="background-color:#ddddddba;margin-top:0px;margin-left:0px;">
+
+<div class="container">
+
+    <script>
+
+        function redeemPoints(reward){
+                
+                $('#redeem-alert').text(reward)
+                var elem = document.getElementById("toShow");
+                elem.style.display = "block";
+            }
+    </script>
+
+<h1>Redeem Your Points For Rewards</h1>
+<br>
+<div id="toShow" class="alert alert-success" role="alert" style="display: none;"><span id="redeem-alert"></span></div>
+
+<div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+   <div class="hovereffect">
+       <img class="img" src="../static/images/rewards/ticket.jpg" alt="">
+       <div class="overlay">
+           <h2>Single Ticket to the Vancouver Aquarium</h2>
+           <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+       </div>
+   </div>
+</div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+   <div class="hovereffect">
+       <img class="img" src="../static/images/rewards/ticket-2.jpg" alt="">
+       <div class="overlay">
+           <h2>Couples Ticket to the Vancouver Aquarium</h2>
+           <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+       </div>
+   </div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+       <div class="hovereffect">
+           <img class="img" src="../static/images/rewards/ticket-fam.jpg" alt="">
+           <div class="overlay">
+               <h2>Family Ticket to the Vancouver Aquarium</h2>
+               <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+           </div>
+       </div>
+   </div>
+
+</div>
+<br>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <div class="hovereffect">
+                <img class="img" src="../static/images/rewards/lobster.jpg" alt="">
+                <div class="overlay">
+                    <h2>15% off at Red Lobster</h2>
+                    <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <div class="hovereffect">
+                <img class="img" src="../static/images/rewards/sushi.jpg" alt="">
+                <div class="overlay">
+                    <h2>Free Appetizer at Miku</h2>
+                    <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <div class="hovereffect">
+                <img class="img" src="../static/images/rewards/fishandchips.jpg" alt="">
+                <div class="overlay">
+                    <h2>10% off at Go Fish</h2>
+                    <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+        
+
+
+    <br>
+    <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <div class="hovereffect">
+                <img class="img" src="../static/images/rewards/fishes.jpg" alt="">
+                <div class="overlay">
+                    <h2>10% off Joe Fortes</h2>
+                    <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                </div>
+            </div>
+        </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+            <div class="hovereffect">
+                <img class="img" src="../static/images/rewards/salmon.jpg" alt="">
+                <div class="overlay">
+                    <h2>10% off Cactus Club</h2>
+                    <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                <div class="hovereffect">
+                    <img class="img" src="../static/images/rewards/oysters.jpg" alt="">
+                    <div class="overlay">
+                        <h2>15% off at Chewies</h2>
+                        <button  onclick="redeemPoints('You Redeemed a Reward!');">redeem </button>
+                    </div>
+                </div>
+            </div>
+
+     </div>
+</div>
+<br>
+<br>
+</body>
+
+
+{% endblock %}
